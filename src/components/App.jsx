@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
-  let time = new Date().toLocaleTimeString();
-  console.log(time);
 
-  // const
+  setInterval(getTime, 1000);
+
+  let cTime = new Date().toLocaleTimeString();
+
+  const [time, setCount] = useState(cTime);
+
+  function getTime() {
+    let nTime = new Date().toLocaleTimeString();
+    setCount(nTime);
+  }
 
   return (
     <div className="container">
       <h1>{time}</h1>
-      <button>Get Time</button>
+      <button onClick={getTime}>Get Time</button>
     </div>
   );
 }
