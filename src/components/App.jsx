@@ -4,6 +4,8 @@ function App() {
   let time = new Date().toLocaleTimeString();
   console.log(time);
 
+  // const
+
   return (
     <div className="container">
       <h1>{time}</h1>
